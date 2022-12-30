@@ -11,24 +11,24 @@ export class TourService {
 
   constructor(private http:HttpClient) { }
   getAll(): Observable<Tour[]> {
-    return this.http.get<Tour[]>(API_URL + '/tuors');
+    return this.http.get<Tour[]>(API_URL + '/tours');
   }
 
   saveProduct(tour: any): Observable<Tour> {
-    return this.http.post<Tour>(API_URL + '/tuors', tour);
+    return this.http.post<Tour>(API_URL + '/tours', tour);
   }
 
   findById(id: number): Observable<Tour> {
-    console.log(this.http.get<Tour>(`${API_URL}/tuors/${id}`))
-    return this.http.get<Tour>(`${API_URL}/tuors/${id}`);
+    console.log(this.http.get<Tour>(`${API_URL}/tours/${id}`))
+    return this.http.get<Tour>(`${API_URL}/tours/${id}`);
   }
 
   updateProduct(id: number, tour: Tour): Observable<Tour> {
-    return this.http.put<Tour>(`${API_URL}/tuors/${id}`, tour);
+    return this.http.put<Tour>(`${API_URL}/tours/${id}`, tour);
   }
 
   deleteProduct(id: number): Observable<Tour> {
-    return this.http.delete<Tour>(`${API_URL}/tuors/${id}`);
+    return this.http.delete<Tour>(`${API_URL}/tours/${id}`);
   }
 
 }
